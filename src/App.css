@@ -1,37 +1,215 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+:root {
+  --clr-white: #fff;
+  --clr-background: #202c37;
+  --clr-background-1: #2d3e4d;
+  --clr-background-3: #2b3945;
+  --clr-error: #edafb6;
+  --border-radius-sm: 2px;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  height: 100vh;
+  background-color: var(--clr-background);
+  color: var(--clr-white);
+}
+a {
+  text-decoration: none;
+  color: var(--clr-white);
+}
+img {
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.8rem;
+}
+.header {
+  height: 50px;
+  width: 100%;
+  background-color: var(--clr-background-1);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+.header h1 {
+  font-size: 1.8rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* utilities */
+.d-flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.gap-2 {
+  gap: 2rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.form-control {
+  padding: 0.6rem 1rem;
+  outline: none;
+  font-size: 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-color: var(--clr-background-3);
+  color: var(--clr-white);
+}
+.alert {
+  padding: 3rem;
+  color: var(--clr-white);
+}
+.alert-danger {
+  background-color: var(--clr-error);
+}
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-background);
+  color: var(--clr-white);
+  border: 1px solid var(--clr-background-1);
+  border-radius: var(--border-radius-sm);
+  outline: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background-color: var(--clr-background-3);
 }
 
-.App-link {
-  color: #61dafb;
+.flex-1 {
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+/* sections */
+.filters,
+.sections {
+  margin-top: 1.5rem;
+}
+.filters input,
+.filters select {
+  width: 300px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 2rem;
+}
+
+.card {
+  width: 100%;
+  overflow: hidden;
+  height: 300px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+}
+/* .header {
+  width: 100%;
+  height: 30%;
+} */
+.card img {
+  display: block;
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+  object-position: center;
+  /* height: 30%; */
+}
+.card .content {
+  background-color: var(--clr-background-3);
+  height: 60%;
+  padding: 2rem;
+}
+.card .content h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.card .content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.card .content span {
+  /* display: inline-block; */
+  font-weight: 400;
+  margin-left: 0.3rem;
+}
+.card:hover {
+  transform: scale(0.95);
+}
+
+.img-container {
+  flex: 0.5;
+}
+.country-info {
+  flex: 1;
+}
+.country-info p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.country-info .country-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.country-info span {
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+.borders {
+  margin-top: 1.6rem;
+}
+.borders h5 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.borders ul {
+  display: flex;
+  gap: 0.5rem;
+}
+.borders ul li {
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-background-3);
+  border: 1px solid var(--clr-background-3);
+  border-radius: var(--border-radius-sm);
+}
+
+.loader-circle {
+  margin: 4rem auto;
+  width: 80px;
+  height: 80px;
+  border: 15px solid;
+  border-color: #e6af2e #1b998b;
+  /* border-color: var(--clr-primary) var(--clr-secondary); */
+  border-radius: 50%;
+  animation: spin 1.5s infinite;
+}
+
+/* animations */
+@keyframes spin {
   to {
     transform: rotate(360deg);
   }
